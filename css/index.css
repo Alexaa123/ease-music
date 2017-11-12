@@ -1,0 +1,152 @@
+section>h2:first-child{
+	margin:0.98em 0;
+	padding-left:2vw;
+	border-left:3px solid #d43c33;
+	line-height: 1;
+	font-size: 1.08em;
+	font-weight: normal;
+}
+.topbar{
+	background:#d43c33;
+	padding:5.6vw 2.5vw;
+	display: flex;
+	align-items:center;
+	justify-content: space-between;
+}
+.topbar .logo{
+	width:38.5vw;
+}
+.topbar .downloadApp{
+	padding:0.2em 0.55em;
+	display:block;
+	border:1px solid #fff;
+	border-radius:1em;
+	font-size:0.95em;
+	color:#fff;
+}
+
+.siteNav{
+
+}
+.siteNav ul{
+	text-align:center;
+	display: flex;
+	border-bottom:1px solid #ccc;
+}
+.siteNav ul>li{
+	flex:1;
+}
+.siteNav ul>li>span{
+	font-size:0.95em;
+	display:inline-block;
+	line-height:12vw;
+	position:relative;
+}
+.siteNav ul>li.active{
+	color:#d43c33;
+}
+.siteNav ul>li.active>span:before{
+	content:'';
+	position: absolute;
+	border-bottom:2px solid #d43c33;
+	left:-1vw;
+	right:-1vw;
+	bottom:0;
+}
+
+
+.playlists{
+	margin-top:1em;
+	padding-bottom:3.5vw;
+}
+.playlists ul{
+	display: flex;
+	flex-wrap: wrap;
+	justify-content: space-between;
+}
+.playlists ul>li{
+	width:calc(33.3333333333% - 1vw);
+	font-size:0.85em;
+	margin-bottom:2vw;
+}
+.playlists ul>li>p{
+	padding:0 1vw;
+	display:-webkit-box;
+	line-height: 5vw;
+	height:10vw;
+	 -webkit-line-clamp:2;
+	 -webkit-box-orient:vertical;
+	overflow:hidden;
+	text-overflow: ellipsis;
+}
+.playlists ul>li>img{
+	width:100%;
+}
+
+.new-music{
+
+}
+.new-music>ol{
+
+}
+.new-music>ol>li{
+	position:relative;
+	padding:0.5em 0;
+	margin-left:3vw;
+	border-bottom:1px solid rgba(0,0,0,0.05);
+	line-height:1.6;
+	font-size:0.8em;
+}
+.new-music>ol>li>h3{
+	font-weight:normal;
+	font-size:1.28em;
+	padding-bottom: 0.3em;
+}
+.new-music>ol>li>p{
+	display: flex;
+	align-items: center;
+	line-height: 1em;
+	color:#888;
+}
+
+.icon-sq{
+	width:4vw;
+	height:4vw;
+	fill:#fe672e;
+	margin-right: 0.5vw;
+}
+.new-music>ol>li>a>.icon{
+	position:absolute;
+	right:3vw;
+	top:50%;
+	transform:translateY(-50%);
+	width: 7.7vw;
+	fill:#999;
+}
+section.art{
+	text-align:center;
+	background:url('//s3.music.126.net/m/s/img/recommand_bg_2x.png?d045fafc60e017b653f8065a87496922');
+	background-size:cover;
+}
+.footer-logo{
+	padding-top:23vw;
+}
+.footer-logo>.logosvg{
+	width:63vw;
+	margin:0 auto;
+}
+.btn-app{
+	display:block;
+	margin:2vw 9.5vw 0 9.5vw;
+	padding:0.5em 0;
+	border:1px solid #d33a31;
+	border-radius:1.2em;
+	color:#d33a31;;
+}
+.copyright{
+	line-height:2em;
+	color:#888;
+	font-size:12px;
+	transform:scale(.75);
+	padding-bottom:1.2em;
+}

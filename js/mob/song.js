@@ -25,7 +25,7 @@ $.get('./lyric.json',function(obj){
 	})
 })
 
-let src = 'http://dl.stream.qqmusic.qq.com/C400001uxKNp3a7Qkv.m4a?vkey=9BFBEF34C63460D26B51A7FD912A5D88317C81C193835910F41B499F66FE48915093523F12A1CC5404DB601B99FDE8575D6461D25BEE7465&guid=1890627140&uin=1085810633&fromtag=66'
+let src = '//ozb1j982i.bkt.clouddn.com/C400001uxKNp3a7Qkv.m4a'
 let $audio = '<audio src='+src+'></audio>'
 let audio = $($audio)[0]
 
