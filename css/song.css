@@ -1,0 +1,132 @@
+@keyframes rotate{
+	0%{
+		transform: rotate(0deg);
+	}
+	100%{
+		transform: rotate(360deg);
+	}
+}
+.page{
+	display:flex;
+	flex-direction: column;
+	height:100vh;
+	background:url('http://p3.music.126.net/9eGyA5UJT4ECpKmLQl7y7Q==/109951163055142171.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;
+}
+.disc-container{
+	position:relative;
+}
+.disc-container .pointer{
+	width:25.8vw;
+	position:absolute;
+	left:46%;
+}
+
+
+.disc{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	margin-top:18.6vw;
+}
+.disc .ring{
+	width:75vw;
+}
+.disc .light{
+	width:75vw;
+	position:absolute;
+}
+.disc .cover{
+	width:50vw;
+	position:absolute;
+	border-radius:50%;
+	z-index: auto;
+}
+.disc.playing .light,
+.disc.playing .cover{
+	animation: rotate 20s infinite linear;
+}
+
+.disc .icon-wrap{
+	position:absolute;
+	z-index:1;
+	display: flex;
+	border:1px solid rgba(255,255,255,0.04);
+	justify-content: center;
+	align-items: center;
+	border-radius:50%;
+	height:16vw;
+	width: 16vw;
+	background:rgba(0,0,0,0.04);
+}
+.icon-wrap.none{
+	border:1px solid rgba(255,255,255,0.5);
+	background:rgba(0,0,0,0.5);
+}
+
+.icon-wrap .icon{
+	cursor: pointer;
+	width: 11vw;
+	fill:rgba(255,255,255,0.04);
+}
+.icon-wrap .icon.hover{
+	fill: rgba(255,255,255,0.5);
+}
+
+.disc .icon-stop{
+	display:none;
+}
+.disc.playing .icon-play{
+	display:none;
+}
+.disc.playing .icon-stop{
+	display:block;
+}
+
+
+.song-description{
+	flex-grow:1;
+	text-align:center;
+	line-height:2;
+	font-size:0.99rem;
+	color:#AEABAC;
+}
+.song-description h1{
+	padding:10px 0;
+	font-size:1.1rem;
+	color:#fff;
+}
+.song-description p{
+	line-height:30px;
+}
+.lyric{
+	height:90px;
+	border:1px solid red;
+	overflow:hidden;
+}
+
+.song-description p.active{
+	color:#fff;
+}
+
+.page>.links{
+	display:flex;
+	justify-content: center;
+	align-items: center;
+	text-align:center;
+}
+.links>a{
+	padding:2.3vw 0;
+	border-radius:2em;
+	display:block;
+	margin:0.7em 0.5em;
+	border:1px solid #d33a31;
+	width:45vw;
+	letter-spacing: 0.2em;
+	color:red;
+}
+.links>a:last-child{
+	background:#d33a31;
+	color:#fff;
+}	
