@@ -5,7 +5,9 @@
 //用jq ajax获取数据
 //获取数据，渲染数据
 //写出停止播放按钮
-//location.search
+//location.search获取ID
+//歌词滚动：1. audio.currentTime获取数据的时间
+//2. 转换时间 让格式一样
 
 let id = parseInt(location.search.match(/\bid=([\d]*)/)[1])
 
@@ -46,6 +48,36 @@ function initPlayer(url){
 		$('.icon-wrap').removeClass('none')
 		$('.icon').removeClass('hover')
 	})
+	setInterval(()=>{
+		let seconds = audio.currentTime
+		let munites = ~~(seconds/60)
+		let left = seconds - munites*60
+		let time = `${pad(munites)}:${pad(left)}`
+		let $lines = $('.lines>p')
+		let $whichLine
+		$lines.each((index,node)=>{
+			let topTime = $lines.eq(index).attr('data-time')
+			let bottomTime = $lines.eq(index+1).attr('data-time')
+			if ($lines.eq(index+1).length !== 0 && topTime<time && bottomTime>time) {
+				console.log($lines[index])
+				$whichLine = $lines.eq(index)
+			}
+		})
+		if ($whichLine) {
+			let top = $whichLine.offset().top
+			let lineTop = $('.lines').offset().top
+			let delta = top - lineTop
+			let deltapx = "-"+delta+"px"
+			$('.lines').css({
+				"transform":"translateY("+deltapx+")",
+			})
+			$whichLine.addClass('active').prev().removeClass('active')
+		}
+	},500)
+}
+
+function pad(num){
+	return num>10 ? num + '':'0'+ num
 }
 
 
