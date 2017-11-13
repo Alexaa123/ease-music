@@ -24,6 +24,32 @@ $.get('json/songs.json',function(node){
 	$('.loading').fadeOut(100)
 })
 
+$('.siteNavtab').on('click','li',function(e){
+	let $content = $('.content-wrap>li')
+
+	let $li = $(e.currentTarget)
+	$li.addClass('active').siblings().removeClass('active')
+
+	let index = $li.index()
+	$content.eq(index).addClass('show').siblings().removeClass('show')
+
+	ajaxHttp($content,index)
+})
+
+function ajaxHttp(elemt,index){
+	let $liLoading = elemt.eq(index)
+	if ($liLoading.attr('data-loading')==='yes') {return}
+	if (index == 1) {
+		$.get('./json/hotsong.json',function(res){	
+			$liLoading.attr('data-loading','yes')
+		})
+	}else if(index == 2){
+		$.get('./json/searchsong.json',function(res){
+			$liLoading.attr('data-loading','yes')
+		})
+	}
+}
+
 // <li>
 // 	<a href="song.html">
 // 		<h3>歌名</h3>

@@ -10,16 +10,26 @@
 //2. 转换时间 让格式一样
 
 let id = parseInt(location.search.match(/\bid=([\d]*)/)[1])
-
+console.log(location.search)
 $.get('./json/songs.json',function(node){
 	let songs = node.filter((node)=>{
 		return node.id === id
 	})[0]
-	let {url,name,lyric} = songs
+	let {url,name,lyric,img,background} = songs
 	initPlayer(url)
 	initText(name,lyric)
+	image(img,background)
 
 })
+
+function image(img,background){
+	$('.cover').attr('src',img)
+	$('.page').css({
+		"background":"url("+background+"),center",
+		"background-repeat":"no-repeat",
+		"background-size":"cover"
+		})
+}
 
 function initText(name,lyric){
 	$('.song-description>h1').text(name)
@@ -54,12 +64,12 @@ function initPlayer(url){
 		let left = seconds - munites*60
 		let time = `${pad(munites)}:${pad(left)}`
 		let $lines = $('.lines>p')
+
 		let $whichLine
 		$lines.each((index,node)=>{
 			let topTime = $lines.eq(index).attr('data-time')
 			let bottomTime = $lines.eq(index+1).attr('data-time')
 			if ($lines.eq(index+1).length !== 0 && topTime<time && bottomTime>time) {
-				console.log($lines[index])
 				$whichLine = $lines.eq(index)
 			}
 		})

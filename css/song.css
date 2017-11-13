@@ -6,13 +6,17 @@
 		transform: rotate(360deg);
 	}
 }
+body{
+	background-color:rgba(0,0,0,0.8);
+}
 .page{
 	display:flex;
 	flex-direction: column;
 	height:100vh;
-	background:url('//p3.music.126.net/9eGyA5UJT4ECpKmLQl7y7Q==/109951163055142171.jpg');
+	/*background:url();
+	background-repeat: no-repeat;
 	background-repeat:no-repeat;
-	background-size:cover;
+	background-size:cover;*/
 }
 .disc-container{
 	position:relative;

@@ -53,7 +53,12 @@ section>h2:first-child{
 	right:-1vw;
 	bottom:0;
 }
-
+.content-wrap>li{
+	display: none;
+}
+.content-wrap>li.show{
+	display: block;
+}
 
 .playlists{
 	margin-top:1em;
@@ -145,7 +150,7 @@ section.art{
 .btn-app{
 	display:block;
 	max-width:81.5vw;
-	padding:1vw 0;
+	padding:0.8vw 0;
 	margin:2vw auto 0 auto;
 	text-align:center;
 	color:#d43c33;
@@ -161,4 +166,75 @@ section.art{
 	font-size:12px;
 	transform:scale(.75);
 	padding-bottom:1.5em;
+}
+
+
+.hot-music>.banner{
+	padding:19%;
+	position: relative;
+	overflow:hidden;
+	background:url('http://ozb1j982i.bkt.clouddn.com/banner.jpg');
+	background-repeat:no-repeat;
+	background-size:cover;
+	padding-left:5vw;
+}
+.banner:after{
+	content: "";
+	position: absolute;
+	z-index:0;
+	right: 0;
+	left:0;
+	bottom:0;
+	top:0;
+	background:rgba(0,0,0,0.2);
+}
+.banner-content{
+	display: flex;
+	position: absolute;
+	flex-direction: column;
+	justify-content: center;
+	right:0;
+	left:0;
+	top:0;
+	bottom:0;
+	z-index: 2;
+	padding-left:5vw;
+}
+.hot-music>.banner>.banner-content>h2{
+	width:7em;
+	height:3em;
+	background:url('http://ozb1j982i.bkt.clouddn.com/icon.png');
+	background-repeat: no-repeat;
+	background-position:-27px -30px;
+	background-size:166px 97px;
+}
+.hot-music>.banner>.banner-content>p{
+	left: 0;
+	color:#fff;
+	margin-top:0.5vw; 
+	margin-left:-13.5vw;
+	transform: scale(.75);
+}
+
+.search-music{
+	position: relative;
+	padding:4vw;
+	border-bottom:1px solid #efeef0;
+}
+.search-btn>input{
+	line-height:2.2em;
+	width:100%;
+	border:1px solid #efeef0;
+	border-radius:2em;
+	background:#ededee;
+	text-indent: 2em;
+	color:#222;
+}
+.icon-search{
+	position: absolute;
+	left:5vw;
+	top:5.3vw;
+	fill:#888;
+	width:6vw;
+	height:6vw;
 }
