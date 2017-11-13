@@ -86,6 +86,9 @@ section>h2:first-child{
 .new-music{
 
 }
+.new-music .loading{
+	text-align:center;
+}
 .new-music>ol{
 
 }
@@ -97,12 +100,15 @@ section>h2:first-child{
 	line-height:1.6;
 	font-size:0.8em;
 }
-.new-music>ol>li>h3{
+.new-music>ol>li>a{
+	color:#222;
+}
+.new-music>ol>li>a>h3{
 	font-weight:normal;
 	font-size:1.28em;
 	padding-bottom: 0.3em;
 }
-.new-music>ol>li>p{
+.new-music>ol>li>a>p{
 	display: flex;
 	align-items: center;
 	line-height: 1em;
@@ -121,6 +127,7 @@ section>h2:first-child{
 	top:50%;
 	transform:translateY(-50%);
 	width: 2em;
+	height:7vw;
 	fill:#999;
 }
 section.art{

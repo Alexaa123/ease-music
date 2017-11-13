@@ -43,9 +43,17 @@
 	border-radius:50%;
 	z-index: auto;
 }
+
+.disc .cover,
+.disc .linght{
+	animation: rotate 20s infinite linear;
+	animation-play-state:paused;
+}
+
 .disc.playing .light,
 .disc.playing .cover{
 	animation: rotate 20s infinite linear;
+	animation-play-state:running;
 }
 
 .disc .icon-wrap{
@@ -102,7 +110,6 @@
 }
 .lyric{
 	height:90px;
-	border:1px solid red;
 	overflow:hidden;
 }
 
