@@ -120,7 +120,7 @@ section>h2:first-child{
 	right:3vw;
 	top:50%;
 	transform:translateY(-50%);
-	width: 7.7vw;
+	width: 2em;
 	fill:#999;
 }
 section.art{
@@ -132,21 +132,26 @@ section.art{
 	padding-top:23vw;
 }
 .footer-logo>.logosvg{
-	width:63vw;
-	margin:0 auto;
+	width:61.7vw;
+	/*margin:0 auto;*/
 }
 .btn-app{
 	display:block;
-	margin:2vw 9.5vw 0 9.5vw;
-	padding:0.5em 0;
-	border:1px solid #d33a31;
-	border-radius:1.2em;
-	color:#d33a31;;
+	max-width:81.5vw;
+	padding:1vw 0;
+	margin:2vw auto 0 auto;
+	text-align:center;
+	color:#d43c33;
+	border:1px solid;
+	font-size:4.3vw;
+	text-decoration:none;
+	line-height:8.7vw;
+	border-radius:1.5em;
 }
 .copyright{
-	line-height:2em;
+	line-height:1.5em;
 	color:#888;
 	font-size:12px;
 	transform:scale(.75);
-	padding-bottom:1.2em;
+	padding-bottom:1.5em;
 }
