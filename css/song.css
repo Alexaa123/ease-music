@@ -50,14 +50,14 @@ body{
 
 .disc .cover,
 .disc .linght{
-	animation: rotate 20s infinite linear;
-	animation-play-state:paused;
+	-webkit-animation: rotate 20s infinite linear;
+	-webkit-animation-play-state:paused;
 }
 
 .disc.playing .light,
 .disc.playing .cover{
-	animation: rotate 20s infinite linear;
-	animation-play-state:running;
+	-webkit-animation: rotate 20s infinite linear;
+	-webkit-animation-play-state:running;
 }
 
 .disc .icon-wrap{

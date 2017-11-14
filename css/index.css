@@ -84,7 +84,10 @@ section>h2:first-child{
 	overflow:hidden;
 	text-overflow: ellipsis;
 }
-.playlists ul>li>img{
+.playlists ul>li>a{
+	color:#222;
+}
+.playlists ul>li>a>img{
 	width:100%;
 }
 
@@ -216,7 +219,7 @@ section.art{
 	transform: scale(.75);
 }
 
-.search-music{
+.search-btn{
 	position: relative;
 	padding:4vw;
 	border-bottom:1px solid #efeef0;
@@ -224,7 +227,7 @@ section.art{
 .search-btn>input{
 	line-height:2.2em;
 	width:100%;
-	border:1px solid #efeef0;
+	border:0;
 	border-radius:2em;
 	background:#ededee;
 	text-indent: 2em;
@@ -232,9 +235,47 @@ section.art{
 }
 .icon-search{
 	position: absolute;
-	left:5vw;
-	top:5.3vw;
+	left:4.5vw;
+	top:50%;
+	margin-top:-0.7em;
+	transform: translateY(0);
 	fill:#888;
-	width:6vw;
-	height:6vw;
+	width:1.5em;
+	height:1.5em;
+	vertical-align: middle;
 }
+.new-music>ol{
+
+}
+.output-wrap>li{
+	position:relative;
+	padding:0.5em 0;
+	margin-left:3vw;
+	border-bottom:1px solid rgba(0,0,0,0.05);
+	line-height:1.6;
+	font-size:0.8em;
+}
+.output-wrap>li>a{
+	color:#222;
+}
+.output-wrap>li>a>h3{
+	font-weight:normal;
+	font-size:1.28em;
+	padding-bottom: 0.3em;
+}
+.output-wrap>li>a>p{
+	display: flex;
+	align-items: center;
+	line-height: 1em;
+	color:#888;
+}
+.output-wrap>li>a>.icon{
+	position:absolute;
+	right:3vw;
+	top:50%;
+	transform:translateY(-50%);
+	width: 2em;
+	height:7vw;
+	fill:#999;
+}
+

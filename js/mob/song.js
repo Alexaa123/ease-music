@@ -58,36 +58,42 @@ function initPlayer(url){
 		$('.icon-wrap').removeClass('none')
 		$('.icon').removeClass('hover')
 	})
-	setInterval(()=>{
+	let time = setInterval(()=>{
 		let seconds = audio.currentTime
 		let munites = ~~(seconds/60)
 		let left = seconds - munites*60
 		let time = `${pad(munites)}:${pad(left)}`
 		let $lines = $('.lines>p')
 
-		let $whichLine
+		//let $whichLine
 		$lines.each((index,node)=>{
 			let topTime = $lines.eq(index).attr('data-time')
 			let bottomTime = $lines.eq(index+1).attr('data-time')
-			if ($lines.eq(index+1).length !== 0 && topTime<time && bottomTime>time) {
-				$whichLine = $lines.eq(index)
+			if (topTime<time && bottomTime>time) {
+				console.log(index)
+				whichLine($lines.eq(index))
+				if (index+1 === $lines.length-1) {
+					whichLine($lines.eq(index+1))
+					clearInterval(time)
+				}
 			}
-		})
-		if ($whichLine) {
-			let top = $whichLine.offset().top
-			let lineTop = $('.lines').offset().top
-			let delta = top - lineTop
-			let deltapx = "-"+delta+"px"
-			$('.lines').css({
-				"transform":"translateY("+deltapx+")",
-			})
-			$whichLine.addClass('active').prev().removeClass('active')
-		}
+		})	
 	},500)
 }
 
 function pad(num){
 	return num>10 ? num + '':'0'+ num
+}
+
+function whichLine(elemt){
+	let top = elemt.offset().top
+	let lineTop = $('.lines').offset().top
+	let delta = top - lineTop
+	let deltapx = "-"+delta+"px"
+	$('.lines').css({
+		"transform":"translateY("+deltapx+")",
+	})
+	elemt.addClass('active').prev().removeClass('active')
 }
 
 
