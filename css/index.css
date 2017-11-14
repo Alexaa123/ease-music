@@ -84,7 +84,10 @@ section>h2:first-child{
 	overflow:hidden;
 	text-overflow: ellipsis;
 }
-.playlists ul>li>img{
+.playlists ul>li>a{
+	color:#222;
+}
+.playlists ul>li>a>img{
 	width:100%;
 }
 
@@ -224,7 +227,7 @@ section.art{
 .search-btn>input{
 	line-height:2.2em;
 	width:100%;
-	border:1px solid #efeef0;
+	border:0;
 	border-radius:2em;
 	background:#ededee;
 	text-indent: 2em;
@@ -232,9 +235,12 @@ section.art{
 }
 .icon-search{
 	position: absolute;
-	left:5vw;
-	top:5.3vw;
+	left:4.5vw;
+	top:50%;
+	margin-top:-0.7em;
+	transform: translateY(0);
 	fill:#888;
-	width:6vw;
-	height:6vw;
+	width:1.5em;
+	height:1.5em;
+	vertical-align: middle;
 }

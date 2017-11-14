@@ -1,0 +1,80 @@
+body,html{
+	font-size: 14px;
+	color: #888;
+}
+#listsong>.topbar{
+	position: relative;
+	padding:25%;
+}
+#listsong>.topbar:after{
+	content: "";
+	background:rgba(0,0,0,0.2);
+	position: absolute;
+	z-index: 1;
+	right:0;
+	left:0;
+	bottom:0;
+	top:0;
+}
+#listsong>.topbar>.background{
+	position: absolute;
+	right:0;
+	left:0;
+	top:0;
+	bottom:0;
+	height:100%;
+	width:100%;
+	background:url('http://p1.music.126.net/aSJOtk-PNWteqDYngwlHPQ==/18678503535332556.webp?imageView&thumbnail=252x0&quality=75&tostatic=0&type=webp');
+	background-repeat: no-repeat;
+	background-position:center center;
+	background-size:cover;
+	-webkit-filter: blur(15px);
+    -moz-filter: blur(15px);
+    -o-filter: blur(15px);
+    -ms-filter: blur(15px);
+    filter: blur(15px);
+}
+#listsong>.topbar>.container{
+	display: flex;
+	align-items: center;
+	padding-left:1em;
+	position: absolute;
+	z-index: 2;
+	right:0;
+	left:0;
+	top:0;
+	bottom:0;
+}
+#listsong>.topbar>.container>img{
+	width:33.6vw;
+}
+#listsong>.topbar>.container>.title{
+	margin-left:1em;
+}
+#listsong>.topbar>.container>.title>h2{
+	color:#fff;
+	margin-bottom:1em;
+	font-weight: normal;
+	font-size:17px;
+}
+#listsong>.topbar>.container>.title>p{
+	padding
+}
+#listsong>.nav{
+	padding:0.5em;
+}
+#listsong>.nav ul li{
+	color:#888;
+	padding:0.5em;
+}
+#listsong>.nav ul li.label>span{
+	font-size: 12px;
+	border:1px solid rgba(0,0,0,0.3);
+	padding:0.1em 0.5em;
+	margin:0.2em;
+	border-radius:0.8em;
+}
+#listsong>.list{
+	padding:0.2em 0.5em;
+	background:#eeeff0;
+}

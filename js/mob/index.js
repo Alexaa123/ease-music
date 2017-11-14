@@ -39,16 +39,16 @@ $('.siteNavtab').on('click','li',function(e){
 function ajaxHttp(elemt,index){
 	let $liLoading = elemt.eq(index)
 	if ($liLoading.attr('data-loading')==='yes') {return}
-	if (index == 1) {
-		$.get('./json/hotsong.json',function(res){	
-			$liLoading.attr('data-loading','yes')
-		})
-	}else if(index == 2){
+	if(index == 2){
 		$.get('./json/searchsong.json',function(res){
 			$liLoading.attr('data-loading','yes')
 		})
 	}
 }
+
+$('.songlist').each((index,node)=>{
+	$(node).attr('href',`songlist.html?id=${index+1}`)
+})
 
 // <li>
 // 	<a href="song.html">
