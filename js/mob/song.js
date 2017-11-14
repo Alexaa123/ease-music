@@ -1,13 +1,3 @@
-//首先布好局
-//旋转好 中心圆形
-//从网页中获取好数据
-//写好json
-//用jq ajax获取数据
-//获取数据，渲染数据
-//写出停止播放按钮
-//location.search获取ID
-//歌词滚动：1. audio.currentTime获取数据的时间
-//2. 转换时间 让格式一样
 
 let id = parseInt(location.search.match(/\bid=([\d]*)/)[1])
 console.log(location.search)
@@ -19,6 +9,7 @@ $.get('./json/songs.json',function(node){
 	initPlayer(url)
 	initText(name,lyric)
 	image(img,background)
+
 
 })
 
@@ -33,8 +24,8 @@ function image(img,background){
 
 function initText(name,lyric){
 	$('.song-description>h1').text(name)
-	parseLyirsc(lyric)
-}
+		parseLyirsc(lyric)
+	}
 
 
 function initPlayer(url){
@@ -58,28 +49,45 @@ function initPlayer(url){
 		$('.icon-wrap').removeClass('none')
 		$('.icon').removeClass('hover')
 	})
-	let time = setInterval(()=>{
+
+	let timer = setInterval(()=>{
 		let seconds = audio.currentTime
 		let munites = ~~(seconds/60)
 		let left = seconds - munites*60
 		let time = `${pad(munites)}:${pad(left)}`
 		let $lines = $('.lines>p')
+		//console.log($lines.eq(62).next())
+		for(let i=0; i<$lines.length; i++){
+			let topTime = $lines.eq(i).attr('data-time')
+			let bottomTime = $lines.eq(i+1).attr('data-time')
 
-		//let $whichLine
-		$lines.each((index,node)=>{
-			let topTime = $lines.eq(index).attr('data-time')
-			let bottomTime = $lines.eq(index+1).attr('data-time')
-			if (topTime<time && bottomTime>time) {
-				console.log(index)
-				whichLine($lines.eq(index))
-				if (index+1 === $lines.length-1) {
-					whichLine($lines.eq(index+1))
-					clearInterval(time)
+			 if($lines.eq(i+1).length !== 0 && topTime<time && bottomTime>time){
+				whichLine($lines.eq(i))
+
+				if ($lines.length-1 === i+1) {
+					console.log(timer)
+					lastLyric(topTime,bottomTime,$lines,i)
+					clearTimeout(timer)	
 				}
 			}
-		})	
+		}	
 	},500)
+
 }
+
+function lastLyric(topTime,bottomTime,$lines,i){
+	let gex = /\b\:(\d{2}\.{1}\d+)/
+	let prevTime = topTime.match(gex)
+	let nextTime = bottomTime.match(gex)
+	let num = (nextTime[1]-prevTime[1])*1000
+	console.log(num)
+
+	setTimeout(()=>{
+		whichLine($lines.eq(i+1))
+	},num)
+}
+
+
 
 function pad(num){
 	return num>10 ? num + '':'0'+ num
