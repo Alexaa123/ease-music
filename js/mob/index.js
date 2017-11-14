@@ -51,8 +51,17 @@ $('.songlist').each((index,node)=>{
 	$(node).attr('href',`songlist.html?id=${index+1}`)
 })
 
-let timer = undefined
 $('#search-song').on('input',function(){
+	let value = $(this).val()
+	if(value === ""){
+		console.log(123)
+		$('.output-wrap').empty()
+		return;
+	}
+})
+
+let timer = undefined
+$('#search-song').on('change',function(){
 	let value = $(this).val()
 
 	if(value === ""){

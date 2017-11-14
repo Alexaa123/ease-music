@@ -72,7 +72,7 @@ function initPlayer(url){
 			if (topTime<time && bottomTime>time) {
 				console.log(index)
 				whichLine($lines.eq(index))
-				if (index+1 === $lines.length-1) {
+				if (index+1 === $lines.length-1 && time>bottomTime) {
 					whichLine($lines.eq(index+1))
 					clearInterval(time)
 				}
